@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        div {
+            position: relative; 
+            text-align: center;
+            align-content: center;
+            top: 500px;
+        }
+
+        p {
+            text-align: center;
+            align-content: center;
+            background-color: gray;
+            font-size: large;
+            margin-bottom: 20px;
+            color: white;
+            width: 200px;
+            height: 50px;
+            font-family: 'Times New Roman', Times, serif;
+            position: relative; 
+            left: 45%;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div>  
+        <p id="text"></p>
+        <button id="btn">Click me</button>
+</div>
+    <script>
+btn = document.querySelector("#btn")
+colorArray = ["red", "green", "yellow", "blue", "pink", "purple", "black", "orange"]
+text = document.querySelector("#text");
+
+
+btn.addEventListener("click", e => {
+    i = Math.floor(Math.random()*colorArray.length)
+    color = colorArray[i]
+    console.log(color)
+    text.innerText = `Background Color: ${color}`
+    document.body.style.backgroundColor = color
+})
+    </script>
+</body>
+</html>
